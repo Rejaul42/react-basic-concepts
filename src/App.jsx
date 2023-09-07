@@ -21,14 +21,31 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Person></Person>
+      <Student name='Sakib' grate='7' score='85'></Student>
+      <Student name='Ananto' grate='6' score='90'></Student>
+      <Student name='Ariv' grate='5' score='95'></Student>
     </>
+  )
+}
+
+function Person() {
+  const info = {
+    name: 'Sakib',
+    age: 7
+  };
+  const age = 15;
+  return <h3>I am {info.name} my age is : {age + info.age}</h3>
+}
+
+function Student({name='', grate=0, score=0}) {
+  return (
+    <div className='student'>
+      <h3>My name is {name}</h3>
+      <p>My grate is: {grate} </p>
+      <p>My score is: {score}</p>
+    </div>
   )
 }
 
